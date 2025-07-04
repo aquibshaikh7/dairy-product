@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dark Header Topbar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="/css/products.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header Topbar -->
+    <div class="header-topbar py-2">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Info -->
+          <div class="col-md-6 col-12 text-center text-md-start mb-2 mb-md-0">
+            <ul
+              class="list-inline mb-0 d-flex justify-content-center justify-content-md-start gap-3"
+            >
+              <li class="list-inline-item text-white">
+                <i class="fas fa-envelope me-1 text-warning"></i>
+                info@example.com
+              </li>
+              <li class="list-inline-item text-white">
+                <i class="fas fa-phone me-1 text-warning"></i> +234 567 234 875
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Info -->
+          <div class="col-md-6 col-12 text-center text-md-end">
+            <ul
+              class="list-inline mb-0 d-flex justify-content-center justify-content-md-end align-items-center gap-3"
+            >
+              <li class="list-inline-item text-white">
+                <i class="fas fa-clock me-1 text-warning"></i> 08:00 am – 6:00
+                pm
+              </li>
+              <li class="list-inline-item text-white">|</li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" class="text-white"><i class="fab fa-skype"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
+    <!-- Navbar Start -->
+    <header class="hylik-header py-3 border-bottom">
+      <div class="container d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="index.html" class="d-flex align-items-center">
+          <img
+            src="/assets/images/logo.png"
+            alt="Hylik Logo"
+            class="me-2"
+            style="height: 40px"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="d-none d-lg-flex align-items-center gap-5 ms-lg-5">
+          <a href="/index.html" class="nav-link text-warning fw-bold">Home</a>
+          <a href="/pages/aboutus.html" class="nav-link text-dark">About Us</a>
+          <a href="/pages/products.html" class="nav-link text-dark"
+            >Our Products</a
+          >
+          <a href="/pages/gallery.html" class="nav-link text-dark">Gallery</a>
+          <a href="/pages/contact.html" class="nav-link text-dark">Contact</a>
+        </nav>
+
+        <!-- Icons -->
+        <div class="d-flex align-items-center gap-2">
+          <a href="#" class="icon-circle" id="openSearch"
+            ><i class="fas fa-search"></i
+          ></a>
+
+          <a href="#" id="cartToggleBtn" class="icon-circle position-relative">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </a>
+
+          <!-- Hamburger Icon -->
+          <button
+            class="btn d-lg-none border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#mobileMenu"
+          >
+            <i class="fas fa-bars fs-4"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!--  -->
+
+    <!-- Cart Dropdown -->
+    <div id="cartDropdown" class="cart-dropdown">
+      <div
+        class="cart-header d-flex justify-content-between align-items-center p-3"
+      >
+        <img
+          src="/assets/images/footer-logo.png"
+          alt="Hylik Logo"
+          class="mb-3"
+        />
+        <button
+          class="btn text-white fs-4 border-0 bg-transparent"
+          onclick="toggleCartDropdown()"
+        >
+          ×
+        </button>
+      </div>
+      <div class="cart-body p-3">
+        <div class="cart-item d-flex justify-content-between mb-3">
+          <div class="d-flex gap-3">
+            <img
+              src="/assets/images/product.jpg"
+              alt="Item"
+              style="width: 50px; height: 50px; object-fit: cover"
+            />
+            <div>
+              <div class="fw-semibold">Organic Milk</div>
+              <small>Qty: 1</small>
+            </div>
+          </div>
+          <div class="fw-bold text-end">$12.00</div>
+        </div>
+        <div class="cart-item d-flex justify-content-between mb-3">
+          <div class="d-flex gap-3">
+            <img
+              src="/assets/images/product2.jpg"
+              alt="Item"
+              style="width: 50px; height: 50px; object-fit: cover"
+            />
+            <div>
+              <div class="fw-semibold">Cheddar Cheese</div>
+              <small>Qty: 2</small>
+            </div>
+          </div>
+          <div class="fw-bold text-end">$24.00</div>
+        </div>
+      </div>
+      <div class="cart-footer p-3">
+        <div class="d-flex justify-content-between fw-bold mb-2">
+          <span>Total:</span>
+          <span>$36.00</span>
+        </div>
+        <a href="#" class="btn btn-warning w-100">View Cart</a>
+      </div>
+    </div>
+    <!--  -->
+    <!-- Search Overlay -->
+    <div id="searchOverlay" class="search-overlay d-none">
+      <button
+        class="btn-close btn-close-white position-absolute top-0 end-0 m-4"
+        id="closeSearch"
+        aria-label="Close"
+      ></button>
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <form class="w-75 w-md-50">
+          <input
+            type="search"
+            class="form-control form-control-lg text-center"
+            placeholder="Search Your Keyword..."
+          />
+        </form>
+      </div>
+    </div>
+
+    <!--  -->
+
+    <!-- Mobile Menu -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="mobileMenu"
+      style="width: 560px"
+    >
+      <!-- Set a smaller width directly here -->
+      <div class="offcanvas-header justify-content-between">
+        <a href="index.html">
+          <img
+            src="/assets/images/logo.png"
+            alt="Hylik Logo"
+            style="height: 40px"
+          />
+        </a>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="list-group list-group-flush">
+          <a href="/index.html">
+            <li class="list-group-item text-warning fw-bold">Home</li></a
+          >
+          <a href="/pages/aboutus.html">
+            <li
+              class="list-group-item d-flex justify-content-between"
+              id="pagesToggle"
+            >
+              About Us
+            </li></a
+          >
+          <a href="/pages/products.html">
+            <li class="list-group-item d-flex justify-content-between">
+              Our Products
+            </li></a
+          >
+          <a href="/pages/gallery.html">
+            <li class="list-group-item d-flex justify-content-between">
+              Gallery
+            </li></a
+          >
+          <a href="/pages/gallery.html">
+            <li class="list-group-item">Contact</li></a
+          >
+        </ul>
+      </div>
+    </div>
+
+    <!-- Navbar End -->
+
+    <!--  -->
+    <!-- Breadcrumb Header Section -->
+    <header class="breadcrumb-section d-flex align-items-center">
+      <div class="container">
+        <h1 class="display-5 fw-bold text-white">Products</h1>
+        <div class="breadcrumb-box">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb px-0 py-0">
+              <li class="breadcrumb-item">
+                <a href="/index.html" class="text-decoration-none text-dark">
+                  <i class="fa fa-home-alt"></i> HOME
+                </a>
+              </li>
+              <li class="breadcrumb-item active text-dark" aria-current="page">
+                PRODUCTS
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!--  -->
+
+    <!--  -->
+
+    <div class="container py-5">
+      <div
+        class="product-filter-wrap d-flex justify-content-between align-items-center flex-wrap mb-4"
+      >
+        <div class="product-filter-left d-flex align-items-center flex-wrap">
+          <button class="shop-list-btn">
+            <i class="fa-solid fa-border-all"></i>
+          </button>
+          <button class="shop-list-btn">
+            <i class="fa-solid fa-list"></i>
+          </button>
+          <form class="ms-3">
+            <select class="form-select">
+              <option value="menu_order">Default sorting</option>
+              <option value="popularity">Sort by popularity</option>
+              <option value="rating">Sort by average rating</option>
+              <option value="date">Sort by latest</option>
+              <option value="price">Sort by price: low to high</option>
+              <option value="price-desc">Sort by price: high to low</option>
+            </select>
+          </form>
+        </div>
+        <div
+          class="product-filter-right d-flex align-items-center mt-3 mt-md-0"
+        >
+          <span class="me-3"
+            >The Single Origin <strong>25,316,00</strong> Products
+            Available.</span
+          >
+          <div class="aon-pro-search">
+            <input type="text" class="form-control" placeholder="Search" />
+            <button class="pro-search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- START PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="aon-shop-box">
+            <div class="aon-shop-pic">
+              <a
+                href="#"
+                class="product-card"
+                data-title="DAIRY PRODUCTS"
+                data-desc="MILK."
+                data-price="RS 20.00"
+                data-img="/assets/images/1-removebg-preview.png"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal"
+              >
+                <img
+                  src="/assets/images/1-removebg-preview.png"
+                  alt="Product"
+                />
+              </a>
+            </div>
+            <h4 class="aon-shop-title">DAIRY PRODUCTS</h4>
+            <p class="aon-shop-text">MILK.</p>
+            <div class="aon-shop-bot">
+              <div class="aon-shop-price">RS 20.00</div>
+              <div class="aon-shop-add-to d-flex">
+                <button class="aon-shop-btn">
+                  <i class="fa fa-heart"></i>
+                </button>
+                <button class="aon-shop-btn">
+                  <i class="fa fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PRODUCT CARD -->
+        <!-- START PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="aon-shop-box">
+            <div class="aon-shop-pic">
+              <a
+                href="#"
+                class="product-card"
+                data-title="DAIRY PRODUCTS"
+                data-desc="GHEE."
+                data-price="RS 20.00"
+                data-img="/assets/images/2-removebg-preview.png"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal1"
+              >
+                <img
+                  src="/assets/images/2-removebg-preview.png"
+                  alt="Product"
+                />
+              </a>
+            </div>
+            <h4 class="aon-shop-title">DAIRY PRODUCTS</h4>
+            <p class="aon-shop-text">GHEE.</p>
+            <div class="aon-shop-bot">
+              <div class="aon-shop-price">RS 20.00</div>
+              <div class="aon-shop-add-to d-flex">
+                <button class="aon-shop-btn">
+                  <i class="fa fa-heart"></i>
+                </button>
+                <button class="aon-shop-btn">
+                  <i class="fa fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PRODUCT CARD -->
+        <!-- START PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="aon-shop-box">
+            <div class="aon-shop-pic">
+              <a
+                href="#"
+                class="product-card"
+                data-title="DAIRY PRODUCTS"
+                data-desc="GHEE."
+                data-price="RS 20.00"
+                data-img="/assets/images/3-removebg-preview.png"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal2"
+              >
+                <img src="/assets/images/paneer.png" alt="Product" />
+              </a>
+            </div>
+            <h4 class="aon-shop-title">DAIRY PRODUCTS</h4>
+            <p class="aon-shop-text">PANEER.</p>
+            <div class="aon-shop-bot">
+              <div class="aon-shop-price">RS 20.00</div>
+              <div class="aon-shop-add-to d-flex">
+                <button class="aon-shop-btn">
+                  <i class="fa fa-heart"></i>
+                </button>
+                <button class="aon-shop-btn">
+                  <i class="fa fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PRODUCT CARD -->
+        <!-- START PRODUCT CARD -->
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <div class="aon-shop-box">
+            <div class="aon-shop-pic">
+              <a
+                href="#"
+                class="product-card"
+                data-title="DAIRY PRODUCTS"
+                data-desc="PANEER."
+                data-price="RS 20.00"
+                data-img="/assets/images/3-removebg-preview.png"
+                data-bs-toggle="modal"
+                data-bs-target="#productModal3"
+              >
+                <img src="/assets/images/curd.png" alt="Product" />
+              </a>
+            </div>
+            <h4 class="aon-shop-title">DAIRY PRODUCTS</h4>
+            <p class="aon-shop-text">CURD.</p>
+            <div class="aon-shop-bot">
+              <div class="aon-shop-price">RS 20.00</div>
+              <div class="aon-shop-add-to d-flex">
+                <button class="aon-shop-btn">
+                  <i class="fa fa-heart"></i>
+                </button>
+                <button class="aon-shop-btn">
+                  <i class="fa fa-cart-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END PRODUCT CARD -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="aon-paging-control mt-4">
+        <div class="site-pagination2">
+          <ul class="pagination mb-0">
+            <li class="page-item"><a class="page-link" href="#">01</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">02</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">03</a></li>
+            <li class="page-item"><a class="page-link" href="#">04</a></li>
+          </ul>
+        </div>
+        <div class="aon-paging-arrow">
+          <div class="aon-paging-arrow-inner">
+            <button><i class="fa-solid fa-arrow-left"></i></button>
+            <button><i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  -->
+
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-4">
+          <div class="modal-header">
+            <h5 class="modal-title">Gir Cow Milk</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- LEFT SIDE: Image with title and price -->
+              <div class="col-md-5 text-center">
+                <h5 class="mb-3" id="productTitle">MILK</h5>
+                <img
+                  id="productImage"
+                  src="/assets/images/1.jpeg"
+                  alt="Milk"
+                  class="img-fluid rounded mb-3"
+                  style="max-width: 100%; height: auto"
+                />
+                <h5 class="text-success" id="productPrice">RS 20.00</h5>
+              </div>
+
+              <!-- RIGHT SIDE: Description + Features List -->
+              <div class="col-md-7">
+                <p id="productDesc1" class="mt-4">
+                  Fresh, pure, and naturally rich — our Gir Cow Milk is sourced
+                  directly from ethically raised indigenous Gir cows. It
+                  contains the A2 beta-casein protein, known to be easier to
+                  digest and more nutritious than regular milk. Ideal for
+                  children, elders, and health-conscious families.
+                </p>
+                <ul class="text-success fw-semibold" id="productDetailsList">
+                  <li>100% A2 milk</li>
+                  <li>No preservatives, no hormones</li>
+                  <li>Freshly collected and delivered within hours</li>
+                </ul>
+                <div class="aon-shop-add-to d-flex mt-4">
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-heart"></i>
+                  </button>
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="modal fade" id="productModal1" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-4">
+          <div class="modal-header">
+            <h5 class="modal-title">DAIRY PRODUCTS</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- LEFT SIDE: Image with title and price -->
+              <div class="col-md-5 text-center">
+                <h5 class="mb-3" id="productTitle">Gir Cow Ghee</h5>
+                <img
+                  id="productImage"
+                  src="/assets/images/2.jpeg"
+                  alt="Milk"
+                  class="img-fluid rounded mb-3"
+                  style="max-width: 100%; height: auto"
+                />
+                <h5 class="text-success" id="productPrice">RS 20.00</h5>
+              </div>
+
+              <!-- RIGHT SIDE: Description + Features List -->
+              <div class="col-md-7">
+                <p id="productDesc1" class="mt-4">
+                  Crafted using the traditional bilona method, our Gir Cow Ghee
+                  is made from curd, not cream — preserving the medicinal and
+                  nutritional value as per Ayurvedic practices. It’s rich in
+                  omega-3s, vitamins A, D, E &amp; K, and supports digestion,
+                  immunity, and brain function.
+                </p>
+                <ul class="text-success fw-semibold" id="productDetailsList">
+                  <li>Made from A2 Gir cow milk curd</li>
+                  <li>NGolden color, grainy texture, and rich aroma</li>
+                  <li>Ideal for cooking, medicinal use, and rituals</li>
+                </ul>
+                <div class="aon-shop-add-to d-flex mt-4">
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-heart"></i>
+                  </button>
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div class="modal fade" id="productModal2" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-4">
+          <div class="modal-header">
+            <h5 class="modal-title">DAIRY PRODUCTS</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- LEFT SIDE: Image with title and price -->
+              <div class="col-md-5 text-center">
+                <h5 class="mb-3" id="productTitle">Gir Cow Low-Fat Paneer</h5>
+                <img
+                  id="productImage"
+                  src="/assets/images/paneer.png"
+                  alt="Milk"
+                  class="img-fluid rounded mb-3"
+                  style="max-width: 100%; height: auto"
+                />
+                <h5 class="text-success" id="productPrice">RS 20.00</h5>
+              </div>
+
+              <!-- RIGHT SIDE: Description + Features List -->
+              <div class="col-md-7">
+                <p id="productDesc1" class="mt-4">
+                  Soft, fresh, and light — our Low-Fat Paneer is made from A2
+                  Gir Cow Milk and is perfect for health- conscious individuals
+                  who want to enjoy paneer without the guilt. High in protein,
+                  low in fat, and full of flavor.
+                </p>
+                <ul class="text-success fw-semibold" id="productDetailsList">
+                  <li>No added preservatives or starch</li>
+                  <li>Ideal for weight-watchers and fitness diets</li>
+                  <li>Great for curries, grilling, or snacking</li>
+                </ul>
+                <div class="aon-shop-add-to d-flex mt-4">
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-heart"></i>
+                  </button>
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <div class="modal fade" id="productModal3" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content p-4">
+          <div class="modal-header">
+            <h5 class="modal-title">DAIRY PRODUCTS</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <!-- LEFT SIDE: Image with title and price -->
+              <div class="col-md-5 text-center">
+                <h5 class="mb-3" id="productTitle">Gir Cow Curd</h5>
+                <img
+                  id="productImage"
+                  src="/assets/images/curd.png"
+                  alt="Milk"
+                  class="img-fluid rounded mb-3"
+                  style="max-width: 100%; height: auto"
+                />
+                <h5 class="text-success" id="productPrice">RS 20.00</h5>
+              </div>
+
+              <!-- RIGHT SIDE: Description + Features List -->
+              <div class="col-md-7">
+                <p id="productDesc1" class="mt-4">
+                  Our Gir Cow Curd is thick, creamy, and naturally probiotic.
+                  Fermented slowly from A2 milk, it supports gut health,
+                  digestion, and immunity. Enjoy it with meals, in smoothies, or
+                  as a wholesome snack.
+                </p>
+                <ul class="text-success fw-semibold" id="productDetailsList">
+                  <li>Made from fresh A2 Gir cow milk</li>
+                  <li>No artificial thickening agents</li>
+                  <li>Naturally cooling and gut-friendly</li>
+                </ul>
+                <div class="aon-shop-add-to d-flex mt-4">
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-heart"></i>
+                  </button>
+                  <button class="aon-shop-btn">
+                    <i class="fa fa-cart-plus"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <!--  -->
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row gy-5">
+          <!-- About -->
+          <div class="col-lg-3 col-md-6">
+            <img
+              src="/assets/images/footer-logo.png"
+              alt="Hylik Logo"
+              class="mb-3"
+            />
+            <p>
+              Loren ipsum dolor conse ctetur at adipis cing elit sed do eiu smod
+              of tempor inci didunt know youlab
+            </p>
+            <div class="contact-info mt-3">
+              <div><i class="fas fa-envelope"></i> yoeml@example.com</div>
+              <div>
+                <i class="fas fa-map-marker-alt"></i> 2968 Island, Mall Road
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-lg-3 col-md-6">
+            <h5>Quick Link</h5>
+            <ul>
+              <li><a href="#">Help and Ordering</a></li>
+              <li><a href="#">Return & Cancellation</a></li>
+              <li><a href="#">Online Organic Service</a></li>
+              <li><a href="#">Delevery Schedule</a></li>
+              <li><a href="#">Online Organic Service</a></li>
+            </ul>
+          </div>
+
+          <!-- Latest Articles -->
+          <div class="col-lg-3 col-md-6">
+            <h5>Latest Articles</h5>
+            <div class="latest-post">
+              <img src="/assets/images/blog1.jpg" alt="Blog" />
+              <div>
+                <div class="date">
+                  <i class="fas fa-calendar-alt"></i> 14 Mar 2019
+                </div>
+                <a href="#">4 Easy Steps to Keep Raw Milk</a>
+              </div>
+            </div>
+            <div class="latest-post">
+              <img src="/assets/images/blog2.jpg" alt="Blog" />
+              <div>
+                <div class="date">
+                  <i class="fas fa-calendar-alt"></i> 14 Mar 2019
+                </div>
+                <a href="#">4 Easy Steps to Keep Raw Milk</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div class="col-lg-3 col-md-6">
+            <h5>Newsletter</h5>
+            <p>
+              Subscribe our newsletter to get more update & join to hylik to
+              dolor conse ctetur at adipis cin.
+            </p>
+            <form class="newsletter d-flex mt-3">
+              <input type="email" placeholder="Email Address" required />
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom mt-5">
+          <p>2021 © Copyright <span>Hylik</span>. All Rights Reserved.</p>
+          <div class="social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--  -->
+    <!-- Submenu toggle script -->
+
+    <script>
+      // JavaScript to toggle submenu visibility
+      document
+        .getElementById("pagesToggle")
+        .addEventListener("click", function () {
+          const submenu = this.nextElementSibling; // Get the submenu element (ul)
+          submenu.style.display =
+            submenu.style.display === "none" ? "block" : "none";
+          const plusSign = this.querySelector("span");
+          plusSign.textContent = submenu.style.display === "none" ? "+" : "-";
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const cartBtn = document.getElementById("cartToggleBtn");
+      const cartDropdown = document.getElementById("cartDropdown");
+
+      function toggleCartDropdown() {
+        cartDropdown.classList.toggle("show");
+      }
+
+      cartBtn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        toggleCartDropdown();
+      });
+
+      document.addEventListener("click", function (e) {
+        if (!cartDropdown.contains(e.target) && !cartBtn.contains(e.target)) {
+          cartDropdown.classList.remove("show");
+        }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const openBtn = document.getElementById("openSearch");
+        const closeBtn = document.getElementById("closeSearch");
+        const overlay = document.getElementById("searchOverlay");
+
+        openBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          overlay.classList.remove("d-none");
+        });
+
+        closeBtn.addEventListener("click", function () {
+          overlay.classList.add("d-none");
+        });
+
+        overlay.addEventListener("click", function (e) {
+          if (e.target === overlay) {
+            overlay.classList.add("d-none");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
